@@ -1,0 +1,30 @@
+{% extends "layout.html.twig" %}
+
+
+{% block title %}
+    Home
+{% endblock  title %}
+
+{% block content %}
+    <h1>Page Home</h1>
+<div class="container">
+    <div class="d-flex flex-wrap justify-content-center">
+        {% for item in aliments %}
+  
+
+        <div class="card m-3" style="width: 18rem;">
+            <img src="{{ item.photo }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.plat}}</h5>
+              <p class="card-text">{{ item.temps }} minutes </p>
+              <a href="?page=Panier&form={{ item.form }}" class="btn btn-primary">Panier</a>
+              <a href="?page=details&id={{ item.id }}" class="btn btn-primary">Details</a>
+              <a href="?page=ajouter&id={{ item.id }}" class="btn btn-primary">ajouter</a>
+              
+            </div>
+          </div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}
+

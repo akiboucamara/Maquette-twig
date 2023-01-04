@@ -1,0 +1,28 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+    <h1>Details</h1>
+{% endblock  %} 
+
+{% block content %}
+<div class="container">
+    <div class="d-flex flex-wrap justify-content-center">
+        {% for produit in aliments %}
+        {% if produit.id == id %}
+
+        <div class="card m-3" style="width: 18rem;">
+            <img src="{{ produit.photo }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{produit.plat}}</h5>
+              <p class="card-body">{{ produit.temps }}</p>
+              
+              <a href="?page=details&id={{ produit.id }}" class="btn btn-primary">Details</a>
+              <a href="#" class="btn btn-primary">Panier</a>
+            
+            </div>
+          </div>
+
+{% endif %}
+{% endfor %}
+</div>
+</div>
+{% endblock %}

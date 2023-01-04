@@ -1,0 +1,16 @@
+{% macro input(name, titre, type, placeholder = '', id) %}
+    <div class="mb-3">
+        <label for="{{ id }}" class="form-label" >{{ titre }}</label>
+        <input type="{{ type }}" class="form-control"  name="{{ name }}" placeholder="{{ placeholder }}" id="{{ id }}" />
+    </div>
+{% endmacro %}
+
+{% macro textarea(name, titre, type, placeholder = '', id) %}
+    <div class="mb-3">
+        <label for="{{ id }}" class="form-label" >{{ titre }}</label>
+        <textarea type="{{ type }}" class="form-control"  name="{{ name }}" placeholder="{{ placeholder }}" id="{{ id }}" ></textarea>
+    </div>
+{% endmacro %}
+
+
+
